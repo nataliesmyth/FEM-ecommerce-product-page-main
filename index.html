@@ -39,7 +39,7 @@
       </ul>
     </nav>
     <div class="header__icons flex">
-      <img src="./images/icon-cart.svg" class="header__icon header__icon--shopping-cart" alt="icon of a shopping cart facing the right outlined in black">
+      <img src="./images/icon-cart.svg" id="cartIcon" class="header__icon header__icon--shopping-cart" alt="icon of a shopping cart facing the right outlined in black">
       <img src="./images/image-avatar.png" class="header__icon header__icon--avatar" alt="small circular photo of the users profile picture, in this case a headshot of a man with long curly hair and sunglasses.">
     </div>
   </header>
@@ -51,6 +51,11 @@
         <img class="main__imgs-mobile-arrow-icon-previous" src="./images/icon-previous.svg" alt="">
         <img class="main__imgs-mobile-arrow-icon-next" src="./images/icon-next.svg" alt="">
       <!-- </div> -->
+       <div class="cart" data-visible="false">
+        <p class="cart__title fs-body fw-bold">Cart</p>
+        <p class="cart__body text-gray fw-semi-bold fs-body">Your cart is empty.</p>
+
+       </div>
       <div class="main__thumbnails">
         <img class="main__thumbnail main__thumbnail--one" src="./images/image-product-1-thumbnail.jpg" alt="">
         <img class="main__thumbnail main__thumbnail--two" src="./images/image-product-2-thumbnail.jpg" alt="">
@@ -59,7 +64,7 @@
       </div>
     </div>
     <div class="main__item-details">
-      <p class="uppercase text-gray fw-bold fs-xs letter-spacing-small">Sneaker Company</p>
+      <p class="uppercase text-gray fw-semi-bold fs-xs letter-spacing-small">Sneaker Company</p>
       <h1 class="fs-large">Fall Limited Edition Sneakers</h1>
       <p class="text-gray fs-small fw-light line-height-p">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
       <div class="main__item-details--price">
