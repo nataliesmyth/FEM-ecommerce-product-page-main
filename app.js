@@ -6,6 +6,8 @@ const removeItem = document.getElementById('svg-minus');
 const addItem = document.getElementById('svg-plus');
 let itemAmountDisplay = document.getElementById('itemAmount');
 let count = 0;
+const cartBtn = document.getElementById('cartIcon');
+const cart = document.querySelector('.cart');
 
 function addItemAmount() {
   count++;
@@ -16,6 +18,15 @@ function subtractItemAmount() {
   if (count > 0) {
     count--;
     itemAmountDisplay.innerText = count;
+  }
+}
+
+function toggleCart() {
+  let isVisible = cart.getAttribute('data-visible');
+  if (isVisible ==='false') {
+    cart.setAttribute('data-visible', true);
+  } else {
+    cart.setAttribute('data-visible', false);
   }
 }
 
@@ -32,3 +43,4 @@ navToggle.addEventListener('click', () => {
 
 removeItem.addEventListener('click', subtractItemAmount);
 addItem.addEventListener('click', addItemAmount);
+cartBtn.addEventListener('click', toggleCart);
