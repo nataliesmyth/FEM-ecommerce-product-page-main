@@ -8,6 +8,8 @@ let itemAmountDisplay = document.getElementById('itemAmount');
 let count = 0;
 const cartBtn = document.getElementById('cartIcon');
 const cart = document.querySelector('.cart');
+const addToCartBtn = document.getElementById('addToCart');
+let totalCartItems = 0;
 
 function addItemAmount() {
   count++;
@@ -30,6 +32,14 @@ function toggleCart() {
   }
 }
 
+function addToCart() {
+  console.log(count);
+  if (count > 0) {
+    totalCartItems += count;
+    console.log(totalCartItems);
+  }
+}
+
 navToggle.addEventListener('click', () => {
   const visibility = nav.getAttribute('data-visible');
   if (visibility === 'false') {
@@ -44,3 +54,4 @@ navToggle.addEventListener('click', () => {
 removeItem.addEventListener('click', subtractItemAmount);
 addItem.addEventListener('click', addItemAmount);
 cartBtn.addEventListener('click', toggleCart);
+addToCartBtn.addEventListener('click', addToCart);
