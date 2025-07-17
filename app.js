@@ -40,6 +40,7 @@ function toggleCart() {
 function addToCart() {
   console.log(count);
   if (count > 0) {
+    cardCount.style.display = 'block';
     totalCartItems += count;
     console.log(totalCartItems);
     cardCount.innerText = totalCartItems;

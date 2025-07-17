@@ -300,6 +300,7 @@ li {
 }
 
 .cart-count {
+  display: none;
   position: absolute;
   width: 19px;
   height: 13px;
