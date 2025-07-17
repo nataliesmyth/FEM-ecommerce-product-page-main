@@ -10,6 +10,11 @@ const cartBtn = document.getElementById('cartIcon');
 const cart = document.querySelector('.cart');
 const addToCartBtn = document.getElementById('addToCart');
 let totalCartItems = 0;
+let cardCount = document.getElementById('cartCount');
+
+// Images and thumbnails
+const hero = document.querySelectorAll('.heroImg');
+console.log(hero)
 
 function addItemAmount() {
   count++;
@@ -37,6 +42,7 @@ function addToCart() {
   if (count > 0) {
     totalCartItems += count;
     console.log(totalCartItems);
+    cardCount.innerText = totalCartItems;
   }
 }
 
@@ -55,3 +61,21 @@ removeItem.addEventListener('click', subtractItemAmount);
 addItem.addEventListener('click', addItemAmount);
 cartBtn.addEventListener('click', toggleCart);
 addToCartBtn.addEventListener('click', addToCart);
+
+// Next and Previous images mobile
+document.addEventListener('click', function (e) {
+  console.log(e.target.id)
+  if (e.target.id === 'mobileNext') {
+    heroArr = Array.from(hero);
+    console.log(heroArr)
+    heroArr.forEach(img => {
+      const visible = img.getAttribute('data-active')
+      if (visible === 'true') {
+        let index = heroArr.indexOf(img);
+        console.log(index+=1)
+        console.log(heroArr.indexOf(index ++))
+        console.log('id of visible image is', visible)
+      }
+    })
+  }
+})

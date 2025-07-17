@@ -207,6 +207,7 @@ border: 0;
 .button { cursor: pointer; }
 
 .svg { cursor: pointer; }
+.hidden {display: none;}
 
 body {
   font-family: var(--ff-primary);
@@ -291,6 +292,28 @@ li {
   height: 24px;
 }
 
+.header__icon--cart {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.cart-count {
+  position: absolute;
+  width: 19px;
+  height: 13px;
+  background: hsl( var(--clr-accent) );
+  color: hsl( var(--clr-white) );
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-align: center;
+  line-height: 13px;
+  top: -5px;
+  right: -5px;
+  border-radius: 10px;
+}
+
 .mobile-nav-toggle {
   display: block;
   /* position: absolute; */
@@ -325,7 +348,7 @@ li {
 }
 
 .main__item-details--discount {
-  padding: 0.25em 0.75em;
+  padding: .08em .75em 0em .75em;
   border-radius: 10px;
   margin-inline-end: 5em;
   align-self: flex-start;
@@ -436,11 +459,11 @@ li {
   border-radius: 10px;
   border: none;
   background-color: hsl( var(--clr-accent) );
-  box-shadow: none;
+  /* box-shadow: none; */
 }
 
 .main__button:hover {
-  background: hsl( var(--clr-accent-light) );
+  background-color: hsl( var(--clr-accent-light) );
 }
 
 .main__item-amount {
@@ -523,6 +546,11 @@ li {
     height: 50px;
   }
 
+  .header__icon--avatar:hover {
+    border: 2px solid hsl( var(--clr-accent) );
+    border-radius: 50%;
+  }
+
   .mobile-nav-toggle {
     display: none;
   }
@@ -532,6 +560,10 @@ li {
     margin-block: 2em;
     justify-content: space-between;
   }
+
+  .main__thumbnails--border {
+    /* background: hsl( var(--clr-accent) ); */
+  }
   
   .main__thumbnail {
     cursor: pointer;
@@ -539,13 +571,18 @@ li {
     max-height: 88px;
     border-radius: 10px;
   }
+  
+  .main__thumbnails--border[data-active='true'] {
+    border-radius: 10px;
+    border: 2px solid hsl( var(--clr-accent) );
 
-  .main__thumbnail[data-active='true'] {
-    /* border: 2px solid hsl( var(--clr-accent) ); */
+  }
+
+  .main__thumbnails--border[data-active='true'] > img {
     opacity: 0.25;
   }
 
-  .main__thumbnail:hover {
+  .main__thumbnails--border[data-active='false'] > .main__thumbnail:hover {
     opacity: 0.5;
   }
 
